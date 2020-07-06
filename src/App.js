@@ -1,11 +1,10 @@
 import React, { Component} from 'react';
 
-// import TilesetPreview from './components/tileset';
+import TilesetPreview from './components/tileset';
 import FileOps from './components/file-ops'; import ColorList from './components/color-list';
 import ColorPicker from './components/color-picker';
 import ColorIDs from './data/color-ids';
 import './App.css'
-import './resources/map.json'
 
 const COLOR_AMOUNT = 16
 
@@ -32,8 +31,8 @@ class App extends Component {
         {name: ColorIDs.YELLOW.name, color: ColorIDs.YELLOW.defaultColor},
         {name: ColorIDs.WHITE.name, color: ColorIDs.WHITE.defaultColor},
       ],
-      tilesetFile: "../resources/tileset.png",
-      tilesetDimensions: { x: 8, y: 12, width: 640, height: 300 },
+      tilesetFile: "./resources/curses_640x300.png",
+      tilesetDimensions: { x: 8, y: 12, width: 80, height: 25 },
       colorIndex: 0,
       currentPickerColor: ColorIDs.BLACK.defaultColor,
     };
@@ -96,10 +95,12 @@ class App extends Component {
           color={this.state.colorVals[this.state.colorIndex].color}
           onChange={(color) => this.onChangePicker(color)}
         />
+        <TilesetPreview
+          filename={this.state.tilesetFile}
+          tilesetDimensions={this.state.tilesetDimensions}
+        />
       </div>
     );
-    /*
-    <TilesetPreview />
     /**/
   }
 }

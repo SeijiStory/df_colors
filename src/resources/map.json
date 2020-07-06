@@ -1,4 +1,6 @@
 {
+  "width": 80,
+  "height": 25,
   "tiles": [
     [
       { "pos_x":  0, "tile_x":  0, "tile_y":  0, "fg":  0, "bg":  7 },
